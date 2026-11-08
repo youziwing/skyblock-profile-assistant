@@ -12,13 +12,18 @@ Copy `.env.example` to `.env`, then set `SKYCRYPT_API_KEY` locally. Never paste 
 
 SkyCrypt API access is cached and rate-limited. The server must reuse cached responses and must not scrape the SkyCrypt website or bypass API restrictions.
 
+## MCP tools
+
+The server registers 16 ChatGPT-facing tools:
+
+`get_profiles`, `get_profile`, `get_profile_summary`, `get_inventory_status`, `get_inventory`, `get_armor`, `get_equipment`, `get_accessories`, `get_pets`, `get_active_pet`, `get_hotm`, `get_mining_progression`, `get_skills`, `get_slayer`, `get_collections`, and `get_bazaar_prices`.
+
 ## ChatGPT custom app and Secure MCP Tunnel (Windows)
 
-This project uses three different kinds of credentials. Do not substitute one for another:
+This project uses two credentials. Do not substitute one for another:
 
-1. `HYPIXEL_API_KEY` is the Hypixel fallback/API key.
-2. `SKYCRYPT_API_KEY` is the SkyCrypt API key for SkyCrypt profile requests.
-3. `CONTROL_PLANE_API_KEY` is an OpenAI runtime secret key used only by `tunnel-client` to authenticate the private tunnel.
+1. `SKYCRYPT_API_KEY` is the SkyCrypt API key for SkyCrypt profile requests.
+2. `CONTROL_PLANE_API_KEY` is an OpenAI runtime secret key used only by `tunnel-client` to authenticate the private tunnel.
 
 Never commit any of these keys. `.env`, `.venv/`, and Python caches are ignored by Git.
 
