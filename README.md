@@ -1,6 +1,16 @@
 # SkyBlock Profile Assistant
 
-A read-only MCP server intended to connect Hypixel SkyBlock profile data to ChatGPT.
+A read-only MCP server intended to connect SkyCrypt/Hypixel SkyBlock profile data to ChatGPT.
+
+## SkyCrypt API setup
+
+Request a SkyCrypt API key from the official SkyCrypt dashboard:
+
+https://sky.shiiyu.moe/dashboard
+
+Copy `.env.example` to `.env`, then set `SKYCRYPT_API_KEY` locally. Never paste the key into chat or commit `.env`.
+
+SkyCrypt API access is cached and rate-limited. The server must reuse cached responses and must not scrape the SkyCrypt website or bypass API restrictions.
 
 ## Current status
 
